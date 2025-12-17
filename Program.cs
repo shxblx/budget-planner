@@ -35,12 +35,5 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
-app.MapStaticAssets();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Account}/{action=Dashboard}/{id?}")
-    .WithStaticAssets();
-
 
 app.Run();
