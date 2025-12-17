@@ -1,0 +1,96 @@
+﻿<style>
+    .expense-container {
+        max-width: 500px;
+        margin: 60px auto;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+        background: #ffffff;
+    }
+
+    .expense-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .expense-container label {
+        font-weight: 600;
+        margin-top: 10px;
+        display: block;
+    }
+
+    .expense-container input, 
+    .expense-container select,
+    .expense-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+    .expense-container textarea {
+        resize: vertical;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: #4CAF50;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    button:hover {
+        background: #45a049;
+    }
+
+    @@media (max-width: 576px) {
+        .expense-container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 90%;
+        }
+    }
+</style>
+
+
+<div class="expense-container">
+    <h2>Add Expense</h2>
+
+    <form method="post">
+
+        <label>Title</label>
+        <input type="text" name="Title" required />
+
+        <label>Amount</label>
+        <input type="number" step="0.01" name="Amount" required />
+
+        <label>Date</label>
+        <input type="date" name="Date" required />
+
+        <label>Category</label>
+        <select name="Category" required>
+            <option value="">Select category</option>
+            <option>Food</option>
+            <option>Rent</option>
+            <option>Travel</option>
+            <option>Bills</option>
+            <option>Shopping</option>
+            <option>Other</option>
+        </select>
+
+        <label>Note</label>
+        <textarea name="Note" rows="3"></textarea>
+
+        <button type="submit">Save Expense</button>
+
+    </form>
+</div>

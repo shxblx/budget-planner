@@ -1,0 +1,103 @@
+﻿@* Views/Account/Register.cshtml *@
+<style>
+    .register-container {
+        max-width: 400px;
+        margin: 60px auto;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+        background: #ffffff;
+    }
+
+    .register-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .register-container label {
+        font-weight: 600;
+        display: block;
+        margin-top: 12px;
+    }
+
+    .register-container input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+    .register-container input:focus {
+        outline: none;
+        border-color: #4CAF50;
+    }
+
+    .register-container button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: #4CAF50;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 18px;
+    }
+
+    .register-container button:hover {
+        background: #45a049;
+    }
+
+    .error-text {
+        color: red;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    /* 🔹 Mobile responsiveness */
+    @@media (max-width: 576px)
+    {
+        .register-container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 90%;
+        }
+
+        .register-container h2 {
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .register-container button {
+            font-size: 15px;
+            padding: 10px;
+        }
+    }
+</style>
+
+<div class="register-container">
+    <h2>User Register</h2>
+
+    <form method="post">
+        <label>Full Name</label>
+        <input type="text" name="FullName" required />
+
+        <label>Email</label>
+        <input type="email" name="Email" required />
+
+        <label>Password</label>
+        <input type="password" name="PasswordHash" required />
+
+        <button type="submit">Register</button>
+
+        @if (ViewBag.Error != null)
+        {
+            <p class="error-text">@ViewBag.Error</p>
+        }
+    </form>
+</div>

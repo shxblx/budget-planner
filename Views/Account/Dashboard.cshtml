@@ -1,0 +1,79 @@
+﻿@* Views/Account/Dashboard.cshtml *@
+<style>
+    .dashboard-container {
+        max-width: 600px;
+        margin: 60px auto;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+        background: #ffffff;
+    }
+
+    .dashboard-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-container p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .dashboard-actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-actions a {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        text-decoration: none;
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    .btn-primary-lite {
+        background: #4CAF50;
+        color: #fff;
+    }
+
+    .btn-secondary-lite {
+        background: #f1f1f1;
+        color: #333;
+        border: 1px solid #ddd;
+    }
+
+    @@media (max-width: 576px) {
+        .dashboard-container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 90%;
+        }
+
+        .dashboard-container h2 {
+            font-size: 20px;
+        }
+    }
+</style>
+
+<div class="dashboard-container">
+    <h2>Welcome, @ViewBag.Name 👋</h2>
+
+    <p>This will be your budget dashboard.</p>
+    <p>Later we’ll add:</p>
+    <ul>
+        <li>Monthly income & expense summary</li>
+        <li>Recent transactions</li>
+        <li>Categories (Rent, Food, Travel…)</li>
+    </ul>
+
+    <div class="dashboard-actions">
+        <a href="/Account/AddExpense" class="btn-primary-lite">Add Expense</a>
+        <a asp-controller="Account" asp-action="Logout" class="btn-secondary-lite">Logout</a>
+    </div>
+</div>
